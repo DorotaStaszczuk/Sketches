@@ -1,7 +1,10 @@
 const canvasSketch = require('canvas-sketch');
 
 const settings = {
-  dimensions: [ 1080, 1080 ]
+  dimensions: [ 1080, 1080 ],
+  animate: true,
+  fps: 2,
+  playbackRate: 'throttle'
 };
 
 const sketch = () => {
@@ -34,7 +37,6 @@ const sketch = () => {
             }
         }
     }
-
   };
 };
 
