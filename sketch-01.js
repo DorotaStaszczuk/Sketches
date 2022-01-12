@@ -28,12 +28,16 @@ const sketch = () => {
 
             context.beginPath();
             context.rect(x, y, w, h);
+            context.strokeStyle = '#384A89';
             context.stroke();
 
             if (Math.random() > 0.5){
+                context.save();
                 context.beginPath();
-                context.rect(x + off / 2, y + off / 2, w - off, h - off);
-                context.stroke();
+                context.arc(x + w / 2, y + w /2, width * 0.03, 0, 2 * Math.PI);
+                context.fillStyle = '#6A72E5';
+                context.fill();
+                context.restore();
             }
         }
     }
