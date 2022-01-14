@@ -1,47 +1,59 @@
 const canvasSketch = require('canvas-sketch');
 
 const settings = {
-  dimensions: [ 1080, 1080 ],
-  animate: true,
-  fps: 2,
-  playbackRate: 'throttle'
+    dimensions: [ 1080, 1080 ],
+    animate: true,
+    fps: 2,
+    playbackRate: 'throttle',
 };
 
 const sketch = () => {
-  return ({ context, width, height }) => {
-    context.fillStyle = 'white';
-    context.fillRect(0, 0, width, height);
-    context.lineWidth = width * 0.01;
+    return ({ context, width, height }) => {
+        context.fillStyle = 'white';
+        context.fillRect(0, 0, width, height);
+        context.lineWidth = width * 0.01;
 
-    const w = width * 0.10;
-    const h = height * 0.10;
-    const gap = width * 0.03;
-    const ix = width * 0.17;
-    const iy = height * 0.17;
-    const off = width * 0.02;
-    let x, y;
+        const cols = 5;
+        const rows = 5;
 
-    for (let i = 0; i < 5; i++){
-        for (let j = 0; j < 5; j++){
-            x = ix + (w + gap) * i;
-            y = iy + (w + gap) * j;
+        const gridw = width * 0.8;
+        const gridh = height * 0.8;
 
-            context.beginPath();
-            context.rect(x, y, w, h);
-            context.strokeStyle = '#384A89';
-            context.stroke();
+        const cellw = gridw / cols;
+        const cellh = gridw / rows;
 
-            if (Math.random() > 0.5){
-                context.save();
+        const w = cellw * 0.8;
+        const h = cellh * 0.8;
+
+        const margx = (gridw - (cols * w)) / (cols - 1);
+        const margy = (gridh - (rows * h)) / (rows - 1);
+
+        const ix = (width - gridw) / 2;
+        const iy = (height - gridh) / 2;
+
+        let x, y;
+
+        for (let i = 0; i < cols; i++){
+            for (let j = 0; j < rows; j++){
+                x = ix + (w + margx) * i;
+                y = iy + (h + margy) *j;
+
                 context.beginPath();
-                context.arc(x + w / 2, y + w /2, width * 0.03, 0, 2 * Math.PI);
-                context.fillStyle = '#6A72E5';
-                context.fill();
-                context.restore();
+                context.rect(x, y, w, h);
+                context.strokeStyle = '#384A89';
+                context.stroke();
+
+                if (Math.random() > 0.5){
+                    context.save();
+                    context.beginPath();
+                    context.arc(x + w / 2, y + w /2, w / 2 * 0.6, 0, 2 * Math.PI);
+                    context.fillStyle = '#6A72E5';
+                    context.fill();
+                    context.restore();
+                }
             }
         }
-    }
-  };
+    };
 };
 
 canvasSketch(sketch, settings);
