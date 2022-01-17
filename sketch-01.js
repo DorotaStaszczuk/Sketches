@@ -52,9 +52,13 @@ const sketch = () => {
 
                 // drawing dots in random squares
                 if (Math.random() > 0.5){
+                    // adding parameter p
+                    let p;
+                    // checking what has smaller value: w or h and making p equal to that value
+                    if (w < h){p = w} else {p = h};
                     context.save();
                     context.beginPath();
-                    context.arc(x + w / 2, y + w /2, w / 2 * 0.6, 0, 2 * Math.PI);
+                    context.arc(x + w / 2, y + h /2, p / 2 * 0.6, 0, 2 * Math.PI);
                     context.fillStyle = '#6A72E5';
                     context.fill();
                     context.restore();
