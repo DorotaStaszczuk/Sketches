@@ -6,16 +6,16 @@ const settings = {
 
 const sketch = () => {
     return ({ context, width, height }) => {
-        context.fillStyle = 'white';
+        context.fillStyle = '#ED3B4B';
         context.fillRect(0, 0, width, height);
 
         // number of columns and rows in a grid
-        const cols = 5;
-        const rows = 5;
+        const cols = 8;
+        const rows = 8;
 
         // width and height of the sketch area without margins
-        const gridw = width * 0.8;
-        const gridh = height * 0.8;
+        const gridw = width * 0.75;
+        const gridh = height * 0.75;
 
         // width and height of a single cell including margins
         const cellw = gridw / cols;
@@ -33,7 +33,7 @@ const sketch = () => {
         const ix = (width - gridw) / 2 + w * 0.5;
         const iy = (height - gridh) / 2 + h * 0.5;
 
-        const radius = w * 0.6;
+        const radius = w * 0.45;
 
         let x, y;
 
@@ -42,10 +42,22 @@ const sketch = () => {
                 x = ix + (w + margx) * i;
                 y = iy + (h + margy) * j;
 
+                // drawing a grid of white cirles
                 context.beginPath();
                 context.arc(x, y, radius, 0, 2 * Math.PI);
-                context.strokeStyle = 'lack';
+                context.lineWidth = 18;
+                context.strokeStyle = 'white';
                 context.stroke();
+
+                // drawing a grid of gray arcs
+                context.save();
+                context.beginPath();
+                context.arc(x, y, radius, 0, 1.6 * Math.PI);
+                context.lineWidth = 19;
+                context.strokeStyle = '#4A4B5F';
+                context.lineCap = 'round';
+                context.stroke();
+                context.restore();
             }
         }
     };
