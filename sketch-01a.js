@@ -1,4 +1,6 @@
 const canvasSketch = require('canvas-sketch');
+const random = require('canvas-sketch-util/random');
+const math = require('canvas-sketch-util/math');
 
 const settings = {
     dimensions: [ 1080, 1080  ]
@@ -43,14 +45,20 @@ const sketch = () => {
                 y = iy + (h + margy) * j;
 
                 // drawing a grid of white cirles
+                context.save();
                 context.beginPath();
                 context.arc(x, y, radius, 0, 2 * Math.PI);
                 context.lineWidth = 18;
                 context.strokeStyle = 'white';
                 context.stroke();
+                context.restore();
 
-                // drawing a grid of gray arcs
+                // drawing and rotating randomly a grid of grey arcs
                 context.save();
+                context.translate(x, y);
+                let rotateAngle = random.range(0, 360) * Math.PI / 180;
+                context.rotate(rotateAngle);
+                context.translate(-x, -y);
                 context.beginPath();
                 context.arc(x, y, radius, 0, 1.6 * Math.PI);
                 context.lineWidth = 19;
