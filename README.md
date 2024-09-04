@@ -6,11 +6,13 @@ I'm using [canvas-sketch](https://github.com/mattdesl/canvas-sketch) - a framewo
 
 ### sketch-01
 a grid of rectangles
-![sketch-01](https://github.com/user-attachments/assets/b8586922-d039-4d1e-8906-86b13fb99599)
+
+<img src="https://github.com/user-attachments/assets/bb941b1d-f5b1-4708-8098-007f6fccc3ce" width="500">
 
 ### sketch-02
 arcs
-![sketch-02](https://github.com/user-attachments/assets/4a7e1990-7f7e-4179-a4b8-ed4a4791403d)
+
+<img src="https://github.com/user-attachments/assets/4a7e1990-7f7e-4179-a4b8-ed4a4791403d" width="500">
 
 ### sketch-03
 agents moving randomly around the canvas
