@@ -6,7 +6,8 @@ I'm using [canvas-sketch](https://github.com/mattdesl/canvas-sketch) - a framewo
 
 ### sketch-01
 a grid of rectangles
-![sketch-01](https://lh3.google.com/u/0/d/1ZIzKOjB4AB_aoj5i1oCF11SblZ0rfhec=w1426-h706-iv1)
+![sketch-01](https://github.com/user-attachments/assets/b8586922-d039-4d1e-8906-86b13fb99599)
+
 ### sketch-02
 arcs
 ### sketch-03
