@@ -10,6 +10,8 @@ a grid of rectangles
 
 ### sketch-02
 arcs
+![sketch-02](https://github.com/user-attachments/assets/4a7e1990-7f7e-4179-a4b8-ed4a4791403d)
+
 ### sketch-03
 agents moving randomly around the canvas
 ### sketch-04
