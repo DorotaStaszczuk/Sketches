@@ -16,10 +16,18 @@ arcs
 
 ### sketch-03
 agents moving randomly around the canvas
+
+https://github.com/user-attachments/assets/75717049-00c9-4fae-a269-aced8d0f48ad
+
 ### sketch-04
 grid with noise to generate randomness
+
+https://github.com/user-attachments/assets/4da2c552-208f-45d7-966a-90b329601845
+
 ### sketch-05
 drawing small glyphs to form a one big letter
+
+
 ## Technologies
 
 Project is created with:
